@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KITAMAC Taekwondo Fitness & Leadership Centre - youth development, safety awareness, leadership, fitness and community action in Aba, Abia State, Nigeria.">
+  <title>KITAMAC | Taekwondo Fitness & Leadership Centre</title>
+  <style>
+    :root{
+      --navy:#071b33;
+      --blue:#0b63ce;
+      --sky:#eaf4ff;
+      --green:#168447;
+      --gold:#f2b632;
+      --white:#fff;
+      --ink:#17212b;
+      --muted:#607080;
+      --line:#dce5ee;
+      --soft:#f6f9fc;
+      --shadow:0 14px 40px rgba(7,27,51,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(7,27,51,.96);
+      backdrop-filter:blur(10px);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .nav{
+      min-height:70px;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand-mark{
+      width:44px;height:44px;border-radius:12px;
+      display:grid;place-items:center;background:var(--gold);
+      color:var(--navy);font-weight:900;font-size:18px;
+    }
+    .brand small{display:block;color:#cfe2f7;font-size:11px;font-weight:600}
+    nav{display:flex;gap:20px;align-items:center}
+    nav a{font-size:14px;color:#e9f2fb}
+    nav a:hover{color:var(--gold)}
+    .menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+    .hero{
+      background:
+        radial-gradient(circle at 85% 15%,rgba(22,132,71,.25),transparent 32%),
+        linear-gradient(135deg,var(--navy),#0a3b70);
+      color:#fff;padding:92px 0 80px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
+    .eyebrow{
+      display:inline-block;padding:7px 12px;border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;color:#e9f5ff;font-size:12px;font-weight:700;
+      text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;
+    }
+    h1{font-size:clamp(40px,7vw,72px);line-height:1.02;margin-bottom:18px}
+    .tagline{font-size:18px;color:#d8e9f9;margin-bottom:28px;max-width:650px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-block;padding:13px 19px;border-radius:10px;font-weight:800;
+      font-size:14px;border:1px solid transparent;
+    }
+    .btn-primary{background:var(--gold);color:var(--navy)}
+    .btn-outline{border-color:rgba(255,255,255,.45);color:#fff}
+    .hero-card{
+      background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+      border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)
+    }
+    .hero-card h3{margin-bottom:12px}
+    .hero-card li{list-style:none;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .hero-card li:last-child{border:0}
+    section{padding:78px 0}
+    section:nth-of-type(even){background:var(--soft)}
+    .section-head{max-width:760px;margin-bottom:38px}
+    .kicker{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:12px}
+    h2{font-size:clamp(30px,5vw,46px);line-height:1.1;margin:8px 0 15px;color:var(--navy)}
+    h3{color:var(--navy);line-height:1.25}
+    .lead{color:var(--muted);font-size:17px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      padding:25px;box-shadow:0 8px 25px rgba(7,27,51,.05)
+    }
+    .card .icon{
+      width:46px;height:46px;border-radius:12px;background:var(--sky);
+      display:grid;place-items:center;font-size:22px;margin-bottom:17px
+    }
+    .card p{color:var(--muted);margin-top:8px;font-size:14px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .check-list{display:grid;gap:12px}
+    .check-list div{
+      padding:13px 15px;border:1px solid var(--line);border-radius:12px;
+      background:#fff
+    }
+    .impact{
+      background:linear-gradient(135deg,#f0fff6,#eef7ff);
+      border:1px solid #d5eadf;border-radius:var(--radius);padding:30px
+    }
+    .numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:22px}
+    .number{padding:18px;background:#fff;border-radius:14px;text-align:center;border:1px solid var(--line)}
+    .number strong{display:block;color:var(--blue);font-size:27px}
+    .number span{font-size:12px;color:var(--muted)}
+    .quote{
+      border-left:5px solid var(--gold);padding:18px 20px;background:#fff;
+      border-radius:0 12px 12px 0;color:var(--muted)
+    }
+    .contact{
+      background:var(--navy);color:#fff
+    }
+    .contact h2{color:#fff}
+    .contact .lead{color:#d6e5f5}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+    .contact-box{display:grid;gap:13px}
+    .contact-item{padding:14px 16px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.05)}
+    .contact-item strong{display:block;color:#fff}
+    .contact-item span,.contact-item a{color:#d6e5f5;font-size:14px}
+    footer{background:#041224;color:#a9bdd2;padding:25px 0;font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .pill{
+      display:inline-block;padding:5px 9px;border-radius:999px;
+      background:#e8f6ee;color:var(--green);font-size:11px;font-weight:800;margin:3px
+    }
+    .notice{
+      padding:20px;border-radius:14px;background:#fff8e6;border:1px solid #f1d995;
+      color:#5b491b;margin-top:20px;font-size:14px
+    }
+    @media(max-width:850px){
+      nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy);padding:18px 4%;flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}
+      .menu{display:block}
+      .hero-grid,.two-col,.contact-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .hero{padding:65px 0 55px}
+      section{padding:58px 0}
+      .grid,.numbers{grid-template-columns:1fr}
+      h1{font-size:44px}
+      .brand span{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="KITAMAC home">
+      <div class="brand-mark">K</div>
+      <div>
+        KITAMAC
+        <small>TAEKWONDO FITNESS & LEADERSHIP CENTRE</small>
+      </div>
+    </a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#impact">Impact</a>
+      <a href="#safeguarding">Safeguarding</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Sport • Leadership • Safety • Community</span>
+        <h1>Building Stronger People. Safer Communities.</h1>
+        <p class="tagline">Empowering young people through Taekwondo, fitness, leadership, safety awareness and community action.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Partner With Us</a>
+          <a class="btn btn-outline" href="#services">Explore Our Work</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Our Focus</h3>
+        <ul>
+          <li>🥋 Taekwondo & Fitness</li>
+          <li>👥 Youth Development & Mentorship</li>
+          <li>🛡️ Personal Safety & Safeguarding Awareness</li>
+          <li>🌱 Green & Safe Communities</li>
+          <li>🏫 School & Community Outreach</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container two-col">
+      <div class="section-head">
+        <span class="kicker">About KITAMAC</span>
+        <h2>Sport with a purpose.</h2>
+        <p class="lead">KITAMAC Taekwondo Fitness & Leadership Centre is a youth-focused sports and community-development organization based in Aba, Abia State, Nigeria.</p>
+        <p style="margin-top:15px;color:var(--muted)">We combine Taekwondo, fitness, leadership education, mentorship, personal-safety awareness and community outreach to help children, adolescents and young people develop discipline, confidence, responsibility and positive leadership.</p>
+        <div style="margin-top:18px">
+          <span class="pill">CAC BN-4091816</span>
+          <span class="pill">Aba, Abia State</span>
+          <span class="pill">Youth Development</span>
+        </div>
+      </div>
+      <div class="impact">
+        <h3>Our Vision</h3>
+        <p style="color:var(--muted);margin-top:8px">To build a generation of disciplined, confident, responsible and safety-conscious young people who contribute positively to their communities.</p>
+        <h3 style="margin-top:25px">Our Mission</h3>
+        <p style="color:var(--muted);margin-top:8px">To use sport, leadership, education and community action to empower young people, promote safer environments and encourage responsible citizenship.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">What We Do</span>
+        <h2>Our Services</h2>
+        <p class="lead">Practical programmes that connect sport, youth development and positive community action.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">🥋</div><h3>Taekwondo & Fitness</h3><p>Structured training for children, adolescents and adults, promoting fitness, discipline, confidence and personal development.</p></article>
+        <article class="card"><div class="icon">👥</div><h3>Youth Development</h3><p>Leadership, mentorship, character development and positive youth engagement through sport and community programmes.</p></article>
+        <article class="card"><div class="icon">🛡️</div><h3>Personal Safety</h3><p>Age-appropriate awareness that helps young people recognize unsafe situations, make safer choices and seek appropriate assistance.</p></article>
+        <article class="card"><div class="icon">🤝</div><h3>Safeguarding Awareness</h3><p>Community education promoting the protection of children and young people from violence, exploitation, abuse and other harm.</p></article>
+        <article class="card"><div class="icon">📢</div><h3>GBV & Social-Vices Prevention</h3><p>Awareness activities and community conversations addressing violence, exploitation and risks affecting young people.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Green & Safe Communities</h3><p>Community initiatives combining youth participation, safety awareness and environmental responsibility.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Our Impact</span>
+        <h2>Turning participation into positive action.</h2>
+        <p class="lead">KITAMAC has used sports, leadership and community outreach to engage young people and community members through schools, churches, clubs and youth groups.</p>
+      </div>
+      <div class="impact">
+        <div class="numbers">
+          <div class="number"><strong>5,000+</strong><span>historical youth outreach</span></div>
+          <div class="number"><strong>300+</strong><span>ambassadors trained or engaged in 2026</span></div>
+          <div class="number"><strong>20+</strong><span>schools participating or expressing interest in Green & Safe activities</span></div>
+        </div>
+        <p style="margin-top:22px;color:var(--muted)">Our programmes have included school and church outreach, Taekwondo training, safety awareness, leadership activities, community volunteering and environmental initiatives.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="green-safe">
+    <div class="container two-col">
+      <div>
+        <span class="kicker">Green & Safe Initiative</span>
+        <h2>Safer People. Safer Spaces. Greener Communities.</h2>
+        <p class="lead">The KITAMAC Green & Safe Initiative mobilizes young people and community volunteers around personal safety, child safeguarding, GBV/social-vices prevention awareness, leadership and environmental responsibility.</p>
+      </div>
+      <div class="check-list">
+        <div>✓ Personal safety awareness</div>
+        <div>✓ Child and youth safeguarding</div>
+        <div>✓ Leadership & volunteerism</div>
+        <div>✓ GBV/social-vices prevention awareness</div>
+        <div>✓ Environmental responsibility</div>
+        <div>✓ Community participation & referral</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="safeguarding">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Safeguarding Commitment</span>
+        <h2>Every child deserves dignity, respect and care.</h2>
+        <p class="lead">KITAMAC promotes safe and respectful environments during its programmes and outreach activities.</p>
+      </div>
+      <div class="quote">
+        We encourage concerns involving abuse, exploitation, violence or other forms of harm to be brought to appropriate authorities or qualified protection professionals.
+      </div>
+      <div class="notice">
+        <strong>Our role:</strong> KITAMAC supports awareness, prevention, responsible reporting and appropriate referral. We do not replace law-enforcement, medical, legal or specialist psychosocial services. Serious protection concerns should be referred to competent authorities and qualified service providers.
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="container two-col">
+      <div>
+        <span class="kicker">Leadership</span>
+        <h2>Amb. Okali Emeka Kingsley</h2>
+        <p class="lead"><strong>Founder & Chief Instructor</strong></p>
+        <p style="margin-top:12px;color:var(--muted)">Amb. Okali Emeka Kingsley is a Taekwondo practitioner, youth mentor and community-development advocate focused on using sport, leadership and community engagement to positively influence young people.</p>
+      </div>
+      <div class="card">
+        <h3>Partnership Opportunities</h3>
+        <p>We welcome collaboration with schools, churches, youth organizations, community associations, government agencies, civil-society organizations, sports organizations and other groups working to improve the wellbeing of young people and communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div>
+        <span class="kicker" style="color:#8fe0ad">Get Involved</span>
+        <h2>Let's build safer, stronger communities together.</h2>
+        <p class="lead">Partner with KITAMAC, bring a programme to your school or community, volunteer, or support youth-development activities.</p>
+        <div class="actions" style="margin-top:24px">
+          <a class="btn btn-primary" href="tel:+2348105603860">Call KITAMAC</a>
+          <a class="btn btn-outline" href="mailto:kitamacaba@gmail.com">Send Email</a>
+        </div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-item"><strong>Address</strong><span>Immaculate Street, Aba, Abia State, Nigeria</span></div>
+        <div class="contact-item"><strong>Phone</strong><a href="tel:+2348105603860">08105603860</a></div>
+        <div class="contact-item"><strong>Email</strong><a href="mailto:kitamacaba@gmail.com">kitamacaba@gmail.com</a></div>
+        <div class="contact-item"><strong>Social Media</strong><span>Facebook: Kitamac Taekwondo<br>TikTok: @Kitamac<br>YouTube: Kitamac Taekwondo</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div><strong>KITAMAC Taekwondo Fitness & Leadership Centre</strong><br>Simply The Best</div>
+    <div>© 2026 KITAMAC. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => document.querySelector('nav').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
